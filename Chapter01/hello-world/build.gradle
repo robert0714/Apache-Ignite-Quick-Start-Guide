@@ -18,26 +18,4 @@ dependencies {
          
     testImplementation 'junit:junit:4.12'
 }
-install {
-    repositories {
-        mavenInstaller {
-            pom.version = '0.0.1-maven-SNAPSHOT'
-            pom.groupId = 'com.packt'
-            pom.artifactId = 'HelloWorld'
-            pom.project {
-                inceptionYear '2020'
-                licenses {
-                    license {
-                        name 'My License'
-                        url 'http://www.mycompany.com/licenses/license.txt'
-                        distribution 'repo'
-                    }
-                }
-            }
-            pom.whenConfigured {pom ->
-                pom.dependencies.find {dep -> dep.groupId == 'junit' && dep.artifactId == 'junit' }.optional = true
-            }
-            pom.writeTo("${mavenPomDir}/${project.group}/${project.name}/pom.xml")
-        }
-    }
-}
+ 

@@ -143,3 +143,5 @@ dist
 .factorypath
 .project
 .settings
+bin
+build

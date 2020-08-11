@@ -50,7 +50,7 @@ public class ClubExpenseSessionEnabledJob extends ComputeJobAdapter {
 		Iterator<List<?>> iterator = result.iterator();
 		if (iterator.hasNext()) {
 			List<?> next = iterator.next();
-			sum = next != null && !next.isEmpty() ? (double) next.get(0) : 0.0d;
+			sum = ( next != null && !next.isEmpty() )  ? (Double) next.get(0) : 0.0d;
 			System.out.println(String.format("Sum of total salary for club %s is %s", clubName, sum));
 		}
 		
@@ -75,7 +75,7 @@ public class ClubExpenseSessionEnabledJob extends ComputeJobAdapter {
 		double higestSalary = 0.00;
 		if (iterator.hasNext()) {
 			List<?> next = iterator.next();
-			higestSalary = next != null && !next.isEmpty() ? (double) next.get(0) : 0.00d;
+			higestSalary = ( next != null && !next.isEmpty() ) ? (Double) next.get(0) : 0.00d;
 			System.out.println(String.format("Richest player of club %s is %s", clubName, higestSalary));
 		}
 		

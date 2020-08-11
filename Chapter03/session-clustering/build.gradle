@@ -3,6 +3,7 @@ apply plugin: 'war'
 apply plugin: 'eclipse'
 
 repositories {
+    mavenLocal()
     jcenter()
 }
 
@@ -21,14 +22,14 @@ dependencies {
     // Use JUnit test framework
     testImplementation 'junit:junit:4.12'
     
-    compile "org.springframework:spring-webmvc:4.3.2.RELEASE"
+    compile "org.springframework:spring-webmvc:4.3.28.RELEASE"
 	compile "javax.servlet:javax.servlet-api:3.1.0"
 	compile "javax.servlet.jsp:javax.servlet.jsp-api:2.3.1"
 	compile "javax.servlet:jstl:1.2"
-	compile "org.apache.ignite:ignite-core:2.5.0"
-	compile "org.apache.ignite:ignite-web:2.5.0"
-	compile "org.apache.ignite:ignite-log4j:*"
-	compile "org.apache.ignite:ignite-spring:2.5.0"
+	compile "org.apache.ignite:ignite-core:2.8.1"
+	compile "org.apache.ignite:ignite-web:2.8.1"
+	compile "org.apache.ignite:ignite-log4j:2.8.1"
+	compile "org.apache.ignite:ignite-spring:2.8.1"
 	compile "com.h2database:h2:1.4.196"
 }
 
