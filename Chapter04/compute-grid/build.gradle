@@ -1,6 +1,6 @@
 buildscript {
 	ext {
-		igniteVersion ='2.5.0'
+		igniteVersion ='2.8.1'
 	}
 	repositories {
 		mavenCentral()
