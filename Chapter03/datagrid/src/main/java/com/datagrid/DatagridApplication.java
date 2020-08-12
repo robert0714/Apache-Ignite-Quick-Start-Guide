@@ -16,13 +16,12 @@ public class DatagridApplication {
 
 	public static void main(String[] args) {
 
-
 		try {
 			IgniteConfiguration cfg = new IgniteConfiguration();
 			cfg.setIgniteInstanceName("MyGrid121");
 
 			Ignite ignite = Ignition.start(cfg);
-			
+
 			ignite.getOrCreateCache("org.hibernate.cache.spi.UpdateTimestampsCache");
 			ignite.getOrCreateCache("org.hibernate.cache.internal.StandardQueryCache");
 
@@ -39,9 +38,10 @@ public class DatagridApplication {
 			ignite.getOrCreateCache(playerConfig);
 
 		} catch (Exception e) {
-			
+			System.out.println(e.getMessage());
+
 		}
-		
+
 		SpringApplication.run(DatagridApplication.class, args);
 
 	}
