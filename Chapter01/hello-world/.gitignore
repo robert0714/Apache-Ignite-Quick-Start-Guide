@@ -143,3 +143,6 @@ dist
 .factorypath
 .project
 .settings
+build
+bin
+ignite

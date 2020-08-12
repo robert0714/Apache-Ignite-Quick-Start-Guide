@@ -144,3 +144,6 @@ dist
 .project
 .settings
 bin
+build
+bin
+ignite

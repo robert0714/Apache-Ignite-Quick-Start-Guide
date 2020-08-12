@@ -145,3 +145,6 @@ dist
 .settings
 bin
 build
+build
+bin
+ignite
