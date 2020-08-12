@@ -1,14 +1,24 @@
+buildscript {
+	ext {
+		igniteVersion ='2.8.1'
+	}
+}
 apply plugin: 'java-library'
 apply plugin: 'war'
 apply plugin: 'eclipse'
+apply plugin: 'maven'
 
 repositories {
     mavenLocal()
     jcenter()
 }
 
+sourceCompatibility = 1.8
+group = 'compute-datagrid'
+version = '1.0.0-BUILD-SNAPSHOT'
+
 war {
-    baseName = 'session-clustering'
+    baseName = 'session-clustering'   
     version = '1.0.0-BUILD-SNAPSHOT'
 }
 
@@ -26,10 +36,26 @@ dependencies {
 	compile "javax.servlet:javax.servlet-api:3.1.0"
 	compile "javax.servlet.jsp:javax.servlet.jsp-api:2.3.1"
 	compile "javax.servlet:jstl:1.2"
-	compile "org.apache.ignite:ignite-core:2.8.1"
-	compile "org.apache.ignite:ignite-web:2.8.1"
-	compile "org.apache.ignite:ignite-log4j:2.8.1"
-	compile "org.apache.ignite:ignite-spring:2.8.1"
+	compile "org.apache.ignite:ignite-core:${igniteVersion}"
+	compile "org.apache.ignite:ignite-web:${igniteVersion}"
+	compile "org.apache.ignite:ignite-log4j:${igniteVersion}"
+	compile "org.apache.ignite:ignite-spring:${igniteVersion}"
 	compile "com.h2database:h2:1.4.196"
 }
 
+task writeNewPom {
+    doLast {
+        pom {
+            project {               
+                inceptionYear '2008'
+                licenses {
+                    license {
+                        name 'The Apache Software License, Version 2.0'
+                        url 'http://www.apache.org/licenses/LICENSE-2.0.txt'
+                        distribution 'repo'
+                    }
+                }
+            }
+        }.writeTo("$buildDir/newpom.xml")
+    }
+}
